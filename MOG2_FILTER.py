@@ -1,25 +1,36 @@
 import cv2
 import numpy as np
 
+#initialize
+
 
 camera = cv2.VideoCapture(0)
 video = cv2.VideoCapture('car.avi')
-mask2 = cv2.createBackgroundSubtractorMOG2(200, 16, True)
-mask = cv2.createBackgroundSubtractorMOG2(300, 400, True)
+mask2 = cv2.createBackgroundSubtractorMOG2()
+
 
 while True:
+
+
+    #Initialize the frames from camera and video
 
     ret, frame_cam = camera.read()
     ret, frame_video = video.read()
   
+    #Both frame should has the same size
+
     dsize = frame_cam.shape[:-1]
     image = cv2.resize(frame_video, (640,480))
     
     print('Frame cam size {}, Frame video size {}'.format(dsize, image.shape[:-1]))
+    
+    #apply the mask
 
     mask = mask2.apply(image)
     black_mask = cv2.bitwise_not(mask)
-    black_mask =  cv2.GaussianBlur(black_mask,(5,5),cv2.BORDER_DEFAULT)
+    
+    #apply bitwise and sum images.
+ 
     frame_cam = cv2.bitwise_and(frame_cam, frame_cam, mask=mask)
     image = cv2.bitwise_and(image, image, mask=black_mask)
     final_img = cv2.add(frame_cam, image)
