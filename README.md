@@ -4,6 +4,9 @@ This mini project Is about  background sustraction with openCV using BackgroundS
 We use this tecnique to obtain a binary image (mask) where there are movement the pixel value Is white and where there aren't the pixel value is black.
 I Will use this mask yo show a vídeo in black zone and other diferent un white zone o the mask.
 
+
+
+BackgroundSustractionMOG() :
 int nmixtures
 Maximum allowed number of mixture components. Actual number is determined dynamically per pixel.
 
@@ -31,6 +34,11 @@ The value for marking shadow pixels in the output foreground mask. Default value
 float fTau
 Shadow threshold. The shadow is detected if the pixel is a darker version of the background. Tau is a threshold defining how much darker the shadow can be. Tau= 0.5 means that if a pixel is more than twice darker then it is not shadow
 
+We Will use de method Apply() this method returns the binary mask and the parameters are:
+
+Inputframe 
+Outputmask 
+Show Shadows (boolean)
 This algorithm Is based in Gassian Mixture Models AND this Is an unsupervised clustering algorithm, but clustes what? Ok, we want cluster the image pixel in 2 groups de background pixel and foreground pixel, AND this algorithm use a probability distribution 
 To decide it.
 
