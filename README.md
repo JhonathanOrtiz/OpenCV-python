@@ -1,6 +1,9 @@
 # MoG2-OpenCV
 This mini project Is about  background sustraction with openCV using BackgroundSustractionMOG2 method un OpenCV:
 
+We use this tecnique to obtain a binary image (mask) where there are movement the pixel value Is white and where there aren't the pixel value is black.
+I Will use this mask yo show a vídeo in black zone and other diferent un white zone o the mask.
+
 int nmixtures
 Maximum allowed number of mixture components. Actual number is determined dynamically per pixel.
 
