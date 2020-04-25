@@ -67,11 +67,11 @@ while True:
     face = face_cascade.detectMultiScale(gray_frame, 1.3, 5)
    
 
-#When apply the unpack the coordiantes with for loop
+#Unpack the coordiantes with for loop
     for x, y, w, h in face:
            facesG = gray_frame[y:y+h, x:x+w]
-           facesC = frame[y:y+h, x:x+w]
-           facesC = cv2.cvtColor(facesC, cv2.COLOR_BGR2BGRA)
+           facesC = image[y:y+h, x:x+w]
+           #facesC = cv2.cvtColor(facesC, cv2.COLOR_BGR2BGRA)
            #cv2.rectangle(frame, (x,y), (x+w, y+h), (255, 0, 0))
            
            
@@ -89,8 +89,12 @@ while True:
 #The same steps to detect the smile and put a mustache
 
            smile = smile_cascade.detectMultiScale(facesG, 1.5, 5)
+          
+           
            for sx, sy, sw, sh in smile:
                smileG = facesG[sy:sy+sh, sx:sx+sw]
+               
+               
 
                mustache2 = resize_image(mustache.copy(),w=sw)
                _mw, _mh, _mc = mustache2.shape
@@ -98,7 +102,7 @@ while True:
                for i in range(0, _mw):
                    for j in range(0, _mh):
                        if mustache2[i, j][3] != 0:
-                           image[sy+int(sh)+100+i, int(sx*5)+j] = mustache2[i,j]
+                           facesC[sy+i, sx+20+j] = mustache2[i,j]
 
            
 
