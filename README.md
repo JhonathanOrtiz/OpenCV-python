@@ -4,7 +4,7 @@ I Going to upload to this repository all work with OpenCV.
 
 ## Intro to OpenCV 
 
-Basic commands with OpenCV and Python to computer vision if you are starting with computer vision You can read Here
+Basic commands with OpenCV and Python to computer vision if you are starting with computer vision visit the original Notebook and a interesting page.
 
 Link original Colab Notebook
 
