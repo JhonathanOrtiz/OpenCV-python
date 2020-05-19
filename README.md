@@ -10,6 +10,12 @@ Link original Colab Notebook
 
 https://colab.research.google.com/drive/1BSBBqVQEUa45_em8Wf0ePOxGyv8CKOKQ?authuser=2#scrollTo=eZlHLCMHwle9
 
+## Rotation and color dection
+
+How to rotate image and color detection with OpenCV
+
+Link to Original Colab Notebook
+
 Link to page to learn computer vision
 
 https://www.pyimagesearch.com/start-here/
